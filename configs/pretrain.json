@@ -1,0 +1,46 @@
+{
+  "data_path": "data/raw/transactions.tgz",
+  "output_dir": "artifacts/foundation_model",
+  "checkpoint_dir": "artifacts/foundation_checkpoints",
+  "max_rows": 8000000,
+  "train_end": "2017-01-01",
+  "validation_end": "2019-01-01",
+  "transactions_per_sequence": 16,
+  "stride": 8,
+  "max_train_sequences": 200000,
+  "max_validation_sequences": 80000,
+  "amount_bins": 32,
+  "timestamp_bins": 64,
+  "delta_bins": 32,
+  "minimum_token_frequency": 5,
+  "field_limits": {
+    "MERCHANT": 20000,
+    "CITY": 5000,
+    "ZIP": 10000
+  },
+  "mlm_probability": 0.15,
+  "seed": 42,
+  "model": {
+    "hidden_size": 128,
+    "num_hidden_layers": 4,
+    "num_attention_heads": 4,
+    "intermediate_size": 512,
+    "hidden_dropout_probability": 0.1,
+    "attention_dropout_probability": 0.1
+  },
+  "training": {
+    "epochs": 12,
+    "train_batch_size": 16,
+    "eval_batch_size": 16,
+    "gradient_accumulation_steps": 4,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "warmup_steps": 100,
+    "logging_steps": 100,
+    "eval_steps": 500,
+    "save_steps": 500,
+    "save_total_limit": 2,
+    "dataloader_num_workers": 2
+  }
+}
+

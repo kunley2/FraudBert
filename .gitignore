@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Large source data and generated artifacts
+data/raw/*
+artifacts/*
+!artifacts/foundation_model/
+!artifacts/foundation_model/config.json
+!artifacts/foundation_model/model.safetensors
+!artifacts/foundation_model/preprocessing.json
+!artifacts/foundation_model/vocab.json
+
+# A verified copy is tracked under docs/references; this root copy may remain while a PDF viewer
+# holds it open on Windows.
+/2011.01843v2.pdf
+
+# Notebook checkpoints
+.ipynb_checkpoints/

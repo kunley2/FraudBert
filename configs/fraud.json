@@ -1,0 +1,26 @@
+{
+  "data_path": "data/raw/transactions.tgz",
+  "foundation_model_dir": "artifacts/foundation_model",
+  "encoded_path": "artifacts/encoded_transactions.uint16.mmap",
+  "output_dir": "artifacts/fraud_classifier",
+  "max_rows": 8000000,
+  "train_end": "2017-01-01",
+  "validation_end": "2019-01-01",
+  "transactions_per_sequence": 16,
+  "negative_to_positive_ratio": 10,
+  "seed": 42,
+  "training": {
+    "epochs": 6,
+    "batch_size": 32,
+    "head_lr": 0.0003,
+    "encoder_lr": 0.00001,
+    "patience": 2
+  },
+  "fine_tuning": {
+    "epochs": 5,
+    "head_lr": 0.0001,
+    "encoder_lr": 0.00001,
+    "patience": 2
+  },
+  "long_fine_tuning_epochs": 12
+}
